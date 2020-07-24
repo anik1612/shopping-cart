@@ -58,10 +58,10 @@ function totalCount() {
 // checkout function
 function checkout(){
     alert('checkout done');
-    // var cart = document.getElementById('cart-section');
-    // cart.style.display = 'none';
-    // var checkoutDone = document.getElementById('thanks-section');
-    // checkoutDone.style.display = 'block';
+    var cart = document.getElementById('cart-section');
+    cart.style.display = 'none';
+    var checkoutDone = document.getElementById('thanks-section');
+    checkoutDone.style.display = 'block';
 }
 
 // item-remove function
