@@ -42,6 +42,9 @@ for (let i = 0; i < minusBtn.length; i++) {
     })
 }
 
+
+
+// calculating total 
 function totalCount() {
     var subTotal = parseInt(spanText[0].innerText) + parseInt(spanText[1].innerText);
     document.getElementById('subTotalSpan').innerText = subTotal;
@@ -51,12 +54,24 @@ function totalCount() {
     document.getElementById('totalSpan').innerText = inTotal.toFixed(2);
 }
 
+
+// 
+
+
 // item-remove function
 var removeItem = document.getElementsByClassName('remove-item');
 for (let i = 0; i < removeItem.length; i++) {
     var element = removeItem[i];
     element.addEventListener('click', function (event) {
-        var elementClicked = event.target
+        var elementClicked = event.target;
         elementClicked.parentElement.parentElement.parentElement.remove();
+        var subTotal = parseInt(document.getElementById('subTotalSpan').innerText);
+        var remainItemPrice = parseInt(document.querySelector('.spanText').innerText);
+        var newSubTotal = remainItemPrice;
+        document.getElementById('subTotalSpan').innerText = newSubTotal;
+        var tax = newSubTotal * .05;
+        document.getElementById('taxSpan').innerText = tax.toFixed(2);
+        var inTotal = newSubTotal + tax;
+        document.getElementById('totalSpan').innerText = inTotal.toFixed(2);
     })
 }
