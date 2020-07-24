@@ -58,3 +58,21 @@ body{
 	opacity: 50%;
 	
 }
+
+#thanks-section{
+	height: 300px;
+	width: 100%;
+	background-color:#d25400;
+	color: white;
+	text-align: center;
+	display: none;
+}
+
+#thanks-section h1{
+	display: inline-block;
+	margin-top: 100px;
+}
+
+p{
+	font-weight: bold;
+}
