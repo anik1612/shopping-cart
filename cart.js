@@ -55,8 +55,14 @@ function totalCount() {
 }
 
 
-// 
-
+// checkout function
+function checkout(){
+    alert('checkout done');
+    var cart = document.getElementById('cart-section');
+    cart.style.display = 'none';
+    var checkoutDone = document.getElementById('thanks-section');
+    checkoutDone.style.display = 'block';
+}
 
 // item-remove function
 var removeItem = document.getElementsByClassName('remove-item');
@@ -65,6 +71,11 @@ for (let i = 0; i < removeItem.length; i++) {
     element.addEventListener('click', function (event) {
         var elementClicked = event.target;
         elementClicked.parentElement.parentElement.parentElement.remove();
+        if(subTotal == null){
+            document.getElementById('subTotalSpan').innerText = "0"
+            document.getElementById('taxSpan').innerText = "0"
+            document.getElementById('totalSpan').innerText = "0"
+        }
         var subTotal = parseInt(document.getElementById('subTotalSpan').innerText);
         var remainItemPrice = parseInt(document.querySelector('.spanText').innerText);
         var newSubTotal = remainItemPrice;
