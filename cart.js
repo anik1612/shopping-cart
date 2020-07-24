@@ -55,7 +55,7 @@ function totalCount() {
 }
 
 
-// 
+// checkout function
 
 
 // item-remove function
@@ -65,6 +65,11 @@ for (let i = 0; i < removeItem.length; i++) {
     element.addEventListener('click', function (event) {
         var elementClicked = event.target;
         elementClicked.parentElement.parentElement.parentElement.remove();
+        if(subTotal == null){
+            document.getElementById('subTotalSpan').innerText = "0"
+            document.getElementById('taxSpan').innerText = "0"
+            document.getElementById('totalSpan').innerText = "0"
+        }
         var subTotal = parseInt(document.getElementById('subTotalSpan').innerText);
         var remainItemPrice = parseInt(document.querySelector('.spanText').innerText);
         var newSubTotal = remainItemPrice;
